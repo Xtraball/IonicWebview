@@ -1,7 +1,17 @@
 {
-  "name": "cordova-plugin-ionic-webview",
+  "name": "IonicWebview",
   "version": "4.0.1",
   "description": "Ionic Web View Engine Plugin",
+  "cordova": {
+    "id": "IonicWebview",
+    "platforms": [
+      "ios",
+      "wp8",
+      "windows",
+      "android",
+      "firefoxos"
+    ]
+  },
   "scripts": {
     "sync_plugin_xml": "sync-cordova-xml package.json plugin.xml --output=plugin.xml",
     "version": "npm run sync_plugin_xml && git add plugin.xml",
@@ -9,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview"
+    "url": "https://github.com/Xtraball/IonicWebview"
   },
   "bugs": {
-    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview/issues"
+    "url": "https://github.com/Xtraball/IonicWebview/issues"
   },
   "keywords": [
     "cordova",
