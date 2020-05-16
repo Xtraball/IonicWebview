@@ -28,71 +28,49 @@
     <repo>https://github.com/Xtraball/IonicWebview</repo>
 
 	<engines>
-        <engine name="cordova"
-                version=">=7.1.0"/>
-        <engine name="cordova-ios"
-                version=">=4.0.0-dev"/>
-        <engine name="apple-ios"
-                version=">=11.0"/>
-        <engine name="cordova-android"
-                version=">=6.4.0"/>
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-ios" version=">=4.0.0-dev"/>
+        <engine name="apple-ios" version=">=11.0"/>
+        <engine name="cordova-android" version=">=6.4.0"/>
 	</engines>
 
-  <js-module src="src/www/util.js"
-             name="IonicWebView">
+  <js-module src="src/www/util.js" name="IonicWebView">
       <clobbers target="Ionic.WebView"/>
   </js-module>
 
   <platform name="android">
-    <config-file target="config.xml"
-                 parent="/*">
+    <config-file target="config.xml" parent="/*">
       <allow-navigation href="http://localhost/*"/>
       <allow-navigation href="https://localhost/*"/>
       <allow-navigation href="ionic://*"/>
-      <preference name="webView"
-                  value="com.ionicframework.cordova.webview.IonicWebViewEngine"/>
+      <preference name="webView" value="com.ionicframework.cordova.webview.IonicWebViewEngine"/>
       <feature name="IonicWebView">
-          <param name="android-package"
-                 value="com.ionicframework.cordova.webview.IonicWebView"/>
+          <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView"/>
       </feature>
     </config-file>
-    <source-file src="src/android/com/ionicframework/cordova/webview/IonicWebViewEngine.java"
-                 target-dir="src/com/ionicframework/cordova/webview"/>
-    <source-file src="src/android/com/ionicframework/cordova/webview/IonicWebView.java"
-                 target-dir="src/com/ionicframework/cordova/webview"/>
-    <source-file src="src/android/com/ionicframework/cordova/webview/AndroidProtocolHandler.java"
-                 target-dir="src/com/ionicframework/cordova/webview"/>
-    <source-file src="src/android/com/ionicframework/cordova/webview/UriMatcher.java"
-                 target-dir="src/com/ionicframework/cordova/webview"/>
-    <source-file src="src/android/com/ionicframework/cordova/webview/WebViewLocalServer.java"
-                 target-dir="src/com/ionicframework/cordova/webview"/>
-    <preference name="ANDROID_SUPPORT_ANNOTATIONS_VERSION"
-                default="28.0.0"/>
-    <framework src="com.android.support:support-annotations:$ANDROID_SUPPORT_ANNOTATIONS_VERSION"/>
+    <source-file src="src/android/com/ionicframework/cordova/webview/IonicWebViewEngine.java" target-dir="src/com/ionicframework/cordova/webview"/>
+    <source-file src="src/android/com/ionicframework/cordova/webview/IonicWebView.java" target-dir="src/com/ionicframework/cordova/webview"/>
+    <source-file src="src/android/com/ionicframework/cordova/webview/AndroidProtocolHandler.java" target-dir="src/com/ionicframework/cordova/webview"/>
+    <source-file src="src/android/com/ionicframework/cordova/webview/UriMatcher.java" target-dir="src/com/ionicframework/cordova/webview"/>
+    <source-file src="src/android/com/ionicframework/cordova/webview/WebViewLocalServer.java" target-dir="src/com/ionicframework/cordova/webview"/>
   </platform>
 
   <!-- ios -->
   <platform name="ios">
-    <js-module src="src/www/ios/ios-wkwebview-exec.js"
-               name="ios-wkwebview-exec">
+    <js-module src="src/www/ios/ios-wkwebview-exec.js" name="ios-wkwebview-exec">
       <clobbers target="cordova.exec"/>
     </js-module>
 
-    <config-file target="config.xml"
-                 parent="/*">
+    <config-file target="config.xml" parent="/*">
         <allow-navigation href="ionic://*"/>
-        <preference name="deployment-target"
-                    value="11.0"/>
+        <preference name="deployment-target" value="11.0"/>
         <feature name="IonicWebView">
-            <param name="ios-package"
-                   value="CDVWKWebViewEngine"/>
+            <param name="ios-package" value="CDVWKWebViewEngine"/>
         </feature>
-        <preference name="CordovaWebViewEngine"
-                    value="CDVWKWebViewEngine"/>
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine"/>
     </config-file>
 
-    <framework src="WebKit.framework"
-               weak="true"/>
+    <framework src="WebKit.framework" weak="true"/>
 
     <header-file src="src/ios/CDVWKWebViewEngine.h"/>
     <source-file src="src/ios/CDVWKWebViewEngine.m"/>
@@ -102,9 +80,8 @@
     <source-file src="src/ios/CDVWKProcessPoolFactory.m"/>
     <header-file src="src/ios/IONAssetHandler.h"/>
     <source-file src="src/ios/IONAssetHandler.m"/>
-    <asset src="src/ios/wk-plugin.js"
-           target="wk-plugin.js"/>
+    <asset src="src/ios/wk-plugin.js" target="wk-plugin.js"/>
   </platform>
-  <issue>https://github.com/Xtraball/IonicWebview/issues</issue>
+  <issue>https://github.com/ionic-team/cordova-plugin-ionic-webview/issues</issue>
   <author>Ionic Team</author>
 </plugin>
